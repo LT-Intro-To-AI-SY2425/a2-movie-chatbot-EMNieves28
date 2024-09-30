@@ -13,8 +13,10 @@ This assignment is about learning and applying the while loop and iterating thro
 ## Reflection Questions
 1. What was difficult for you while completing the match function?
 
+I feel that the hardest part for me while completing the match function was just learning python. Again, I have never really worked with python before this class so I am still learning it as I go. 
 
 
 2. Explain how you could use the match function for extracting information from a movie database.
 
+I could use the match function for extracting information from a movie database so that I can match certain words or phrases to just one symbol to make the coding easier and more efficient. 
 
