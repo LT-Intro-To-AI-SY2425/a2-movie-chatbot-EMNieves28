@@ -36,20 +36,21 @@ def match(pattern: List[str], source: List[str]) -> List[str]:
         #   and come back to this one afterwards
 
         elif pattern[pind] == '%':
-            if pind + 1 == len(pattern):
+            if pind == len(pattern) - 1:
                 combined = ' '.join(source[sind:])
-                result.append(combined)
+                result += [combined]
                 return result
-            
-            while sind < len(source):
-               temp_result = match(pattern[pind + 1:], source[sind:])
-               if temp_result is not None:
-                    result.append(combined)  # consume words up to the match
-                    result.extend(temp_result)  # append the results from the recursive call
-                    return result
-            sind += 1
-               
-            return None
+            else:
+                pind +=1
+                accum = ""
+                while source[sind] != pattern[pind]:
+                    accum += source[sind] + " "
+                    sind += 1
+                    # print(accum)
+
+                    if sind >= len(source):
+                        return None
+                result.append(accum.rstrip())
 
         # 3) if we reached the end of the source but not the pattern
         elif sind == len(source) and pind < len(pattern): 
